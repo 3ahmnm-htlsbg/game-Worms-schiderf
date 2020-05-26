@@ -155,7 +155,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpKey: 32
   fowardKey: 100
-  z: {fileID: 441324732}
+  backKey: 97
+  rb: {fileID: 441324732}
   x: {x: 0, y: 250, z: 0}
   y: {x: 200, y: 0, z: 0}
 --- !u!136 &441324728
