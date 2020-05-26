@@ -7,9 +7,13 @@ public class WormController : MonoBehaviour
     public KeyCode jumpKey;
     public KeyCode fowardKey;
     public KeyCode backKey;
+    public KeyCode downKey;
+    public KeyCode shootKey;
     public Rigidbody rb;
     public Vector3 x;
     public Vector3 y;
+    public GameObject projectile;
+
     // Update is called once per frame
     void Update()
     {
@@ -29,6 +33,18 @@ public class WormController : MonoBehaviour
         {
             Debug.Log("Zurück taste wurde gedrückt");
             rb.AddForce(-y);
+        }
+
+        if (Input.GetKeyDown(downKey))
+        {
+            Debug.Log("down taste wurde gedrückt");
+            rb.AddForce(-x);
+        }
+
+        if (Input.GetKeyDown(shootKey))
+        {
+            Debug.Log("Pew Pew");
+            Instantiate(projectile);
         }
     }
 }
