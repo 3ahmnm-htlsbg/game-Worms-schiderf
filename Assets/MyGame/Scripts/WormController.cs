@@ -12,11 +12,12 @@ public class WormController : MonoBehaviour
     public Rigidbody rb;
     public Vector3 x;
     public Vector3 y;
+    public Vector3 y2;
     public GameObject projectile;
     public Vector3 Position;
     public Quaternion Quat;
     public GameObject Weapon;
-    public Vector3 PosW;
+    public Transform PosT;
 
     // Update is called once per frame
     void Update()
@@ -48,8 +49,9 @@ public class WormController : MonoBehaviour
         if (Input.GetKeyDown(shootKey))
         {
             Debug.Log("Pew Pew");
-            PosW = Weapon.transform.position;
-            Instantiate(projectile, PosW, Quat);
+            GameObject Proj = Instantiate(projectile, PosT.position, Quat);
+            Rigidbody rbp = Proj.GetComponent(typeof(Rigidbody)) as Rigidbody;
+            rbp.AddForce(y2);
         }
     }
 }
